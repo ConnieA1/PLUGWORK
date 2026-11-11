@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const whatsappUrl =
-  "https://wa.me/2349162710352?text=Hi%20PlugworkNG%2C%20I%27d%20like%20to%20talk%20about%20your%20services.";
+  "https://wa.me/2349032339806?text=Hi%20PlugworkNG%2C%20I%27d%20like%20to%20talk%20about%20your%20services.";
 
 const services = [
   {
@@ -478,8 +478,8 @@ function App() {
               <p className="mt-3 text-xs tracking-wide text-white/50">Trust. Connect. Prosper.</p>
             </div>
             <div className="flex flex-col gap-3 text-sm text-white/70 sm:items-end">
-              <a className="transition hover:text-gold" href="tel:+2349162710352">0916 271 0352</a>
-              <a className="transition hover:text-gold" href="tel:+2348103510048">0810 351 0048</a>
+              <a className="transition hover:text-gold" href="tel:+2349032339806">0903 233 9806</a>
+              <a className="transition hover:text-gold" href="tel:+2349049331071">0904 933 1071</a>
             </div>
           </div>
           <div className="flex flex-col justify-between gap-3 pt-5 text-xs text-white/45 sm:flex-row">
