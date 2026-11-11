@@ -1,0 +1,73 @@
+export const galleryCategories = [
+  "All work",
+  "Printing & packaging",
+  "Branded goods",
+  "Property & materials",
+];
+
+export const galleryItems = [
+  {
+    title: "Staircase railings",
+    category: "Property & materials",
+    service: "Metalwork",
+    description: "A stainless-steel handrail detail in a residential interior.",
+    image: "/images/gallery/stainless-steel-railings.jpg",
+    alt: "Stainless-steel railings along an indoor staircase",
+  },
+  {
+    title: "Building in progress",
+    category: "Property & materials",
+    service: "Construction",
+    description: "A residential property photographed during construction.",
+    image: "/images/gallery/building-project.jpg",
+    alt: "Multi-storey residential building under construction",
+  },
+  {
+    title: "Roofing material",
+    category: "Property & materials",
+    service: "Roofing",
+    description: "A close look at stone-coated roofing sheets.",
+    image: "/images/gallery/roofing-materials.jpg",
+    alt: "Textured stone-coated roofing sheets",
+  },
+  {
+    title: "Branded shopping bags",
+    category: "Printing & packaging",
+    service: "Packaging",
+    description: "Custom printed paper bags for a food brand.",
+    image: "/images/gallery/branded-shopping-bags.jpg",
+    alt: "Custom printed paper shopping bag with food-brand artwork",
+  },
+  {
+    title: "Promotional goods",
+    category: "Branded goods",
+    service: "Promotional products",
+    description: "A selection of branded umbrellas and drinkware.",
+    image: "/images/gallery/promotional-goods.jpg",
+    alt: "Branded umbrellas and drinkware arranged together",
+  },
+  {
+    title: "Custom mugs",
+    category: "Branded goods",
+    service: "Promotional products",
+    description: "A batch of custom logo mugs ready for delivery.",
+    image: "/images/gallery/branded-mugs.jpg",
+    alt: "Stacked white mugs printed with a customer logo",
+  },
+  {
+    title: "Food packaging concept",
+    category: "Printing & packaging",
+    service: "Food packaging",
+    description: "A branded pouch concept for a packaged food product.",
+    image: "/images/gallery/food-packaging.jpg",
+    alt: "Branded Ofada pepper mix pouch packaging concept",
+  },
+  {
+    title: "Framed print samples",
+    category: "Printing & packaging",
+    service: "Display prints",
+    description: "Printed and framed artwork displayed as a set.",
+    image: "/images/gallery/framed-print.jpg",
+    alt: "A collection of framed art prints",
+  },
+];

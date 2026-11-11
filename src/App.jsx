@@ -7,6 +7,7 @@ import {
   Box,
   Check,
   Home,
+  Instagram,
   Menu,
   MessageCircle,
   Megaphone,
@@ -14,11 +15,51 @@ import {
   Printer,
   ShieldCheck,
   Store,
+  Youtube,
   X,
 } from "lucide-react";
+import { galleryItems } from "./galleryData.js";
 
 const whatsappUrl =
   "https://wa.me/2349032339806?text=Hi%20PlugworkNG%2C%20I%27d%20like%20to%20talk%20about%20your%20services.";
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    handle: "@plugwork.ng",
+    href: "https://www.instagram.com/plugwork.ng",
+    icon: Instagram,
+    iconClass: "social-icon-instagram",
+  },
+  {
+    name: "YouTube",
+    handle: "@plugworkng",
+    href: "https://youtube.com/@plugworkng",
+    icon: Youtube,
+    iconClass: "social-icon-youtube",
+  },
+  {
+    name: "X",
+    handle: "@plugworkng",
+    href: "https://x.com/plugworkng",
+    icon: XBrandIcon,
+    iconClass: "social-icon-x",
+  },
+  {
+    name: "TikTok",
+    handle: "@plugworkng",
+    href: "https://www.tiktok.com/@plugworkng",
+    icon: TikTokIcon,
+    iconClass: "social-icon-tiktok",
+  },
+  {
+    name: "WhatsApp",
+    handle: "Chat with us",
+    href: whatsappUrl,
+    icon: WhatsAppIcon,
+    iconClass: "social-icon-whatsapp",
+  },
+];
 
 const services = [
   {
@@ -113,6 +154,8 @@ const steps = [
   },
 ];
 
+const galleryHighlights = [galleryItems[0], galleryItems[3], galleryItems[4]];
+
 function BrandMark({ light = false }) {
   return (
     <a className="brand inline-flex items-center gap-2.5" href="#home" aria-label="PlugworkNG home">
@@ -136,6 +179,36 @@ function SectionLabel({ children, light = false }) {
       <span className={`h-px w-7 ${light ? "bg-gold" : "bg-blue"}`} />
       {children}
     </p>
+  );
+}
+
+function TikTokIcon({ size = 18 }) {
+  return (
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.33V2h-3.53v13.67a2.9 2.9 0 0 1-2.9 2.9 2.9 2.9 0 0 1-2.9-2.9 2.9 2.9 0 0 1 2.9-2.9c.3 0 .6.05.88.14V9.3a6.4 6.4 0 0 0-.88-.06 6.43 6.43 0 1 0 6.43 6.43V8.72a8.3 8.3 0 0 0 4.86 1.56V6.76a4.9 4.9 0 0 1-1.09-.07Z" />
+    </svg>
+  );
+}
+
+function XBrandIcon({ size = 18 }) {
+  return (
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.9 1.15h3.68l-8.04 9.19L24 23.2h-7.4l-5.8-7.58-6.64 7.58H.48l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93Zm-1.29 19.8h2.04L6.49 3.29H4.3l13.31 17.66Z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ size = 18 }) {
+  return (
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.02 3.73 3.82-1a10 10 0 1 0 5.7-17.73Zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-2.27.6.61-2.2-.2-.32a8.2 8.2 0 1 1 6.34 3.24Zm4.5-6.14c-.25-.13-1.46-.72-1.69-.8-.23-.08-.4-.13-.57.13-.17.25-.65.8-.8.97-.15.17-.3.19-.55.06-.25-.13-1.04-.38-1.98-1.2-.73-.65-1.22-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.12-.12.25-.3.38-.44.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.07-.12-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44h-.49c-.17 0-.45.06-.68.32-.23.25-.88.86-.88 2.1 0 1.25.9 2.45 1.03 2.62.12.17 1.77 2.7 4.3 3.79.6.26 1.06.41 1.42.53.6.19 1.14.16 1.56.1.48-.07 1.46-.6 1.67-1.2.2-.58.2-1.08.14-1.19-.06-.1-.23-.17-.48-.29Z" />
+    </svg>
   );
 }
 
@@ -171,6 +244,7 @@ function App() {
             aria-label="Main navigation"
           >
             <a className="nav-link" href="#services" onClick={closeMenu}>Services</a>
+            <a className="nav-link" href="/gallery.html" onClick={closeMenu}>Our work</a>
             <a className="nav-link" href="#how-it-works" onClick={closeMenu}>How it works</a>
             <a className="nav-link" href="#about" onClick={closeMenu}>About</a>
             <a
@@ -349,6 +423,43 @@ function App() {
           </div>
         </section>
 
+        <section className="bg-white py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="mb-9 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+              <div>
+                <SectionLabel>A few things we help make happen</SectionLabel>
+                <h2 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-[-0.05em] sm:text-5xl">
+                  Real work. <span className="text-blue">More possibilities.</span>
+                </h2>
+              </div>
+              <a className="inline-flex items-center gap-2 text-sm font-bold text-blue" href="/gallery.html">
+                Explore the gallery <ArrowUpRight size={16} />
+              </a>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {galleryHighlights.map((item) => (
+                <a className="group relative overflow-hidden rounded-3xl bg-ink" href="/gallery.html" key={item.title}>
+                  <div className="aspect-[1.16] overflow-hidden">
+                    <img
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                      src={item.image}
+                      alt={item.alt}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-ink/90 via-ink/45 to-transparent p-5 pt-14 text-white">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold">{item.service}</p>
+                      <h3 className="mt-1 text-lg font-bold">{item.title}</h3>
+                    </div>
+                    <ArrowUpRight size={19} className="shrink-0 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="how-it-works" className="scroll-mt-20 bg-ink py-20 text-white sm:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-12">
             <div>
@@ -384,60 +495,77 @@ function App() {
         </section>
 
         <section id="about" className="scroll-mt-20 py-20 sm:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20 lg:px-12">
-            <div className="relative">
-              <div className="relative aspect-[0.95] overflow-hidden rounded-[2rem] bg-ink">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="grid gap-8 overflow-hidden rounded-[2rem] bg-blue/[0.06] p-6 sm:p-10 lg:grid-cols-[0.72fr_1.15fr_0.9fr] lg:gap-10 lg:p-12">
+              <div className="relative min-h-[360px] overflow-hidden rounded-2xl bg-ink sm:min-h-[440px]">
                 <img
-                  className="h-full w-full object-cover object-[50%_36%]"
-                  src="/images/plugwork-vision.jpg"
-                  alt="PlugworkNG's vision: connecting ideas, people, and opportunities"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_20%]"
+                  src="/images/founder-esama.jpg"
+                  alt="Esama Isaiah, founder of PlugworkNG"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
-                <p className="absolute bottom-5 left-5 text-sm font-bold text-white sm:bottom-7 sm:left-7">
-                  Trust. Connect. Prosper.
-                </p>
-              </div>
-              <div className="absolute -bottom-5 -right-3 flex items-center gap-3 rounded-2xl border border-ink/5 bg-white px-4 py-3 shadow-xl sm:-right-6">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/20 text-ink">
-                  <BadgeCheck size={20} />
-                </span>
-                <span className="text-sm font-bold leading-5">People first.<br />Possibilities next.</span>
-              </div>
-            </div>
-            <div className="pt-4 lg:pt-0">
-              <SectionLabel>About PlugworkNG</SectionLabel>
-              <h2 className="text-4xl font-extrabold leading-tight tracking-[-0.05em] sm:text-5xl">
-                We bring good people and <span className="text-blue">good ideas together.</span>
-              </h2>
-              <p className="mt-6 leading-7 text-ink/65">
-                PlugworkNG is a connector for people and businesses with things
-                to make, find, promote, or build. We bring creative services,
-                market sourcing, printing, property, and more into one place to
-                help you take your next step.
-              </p>
-              <div className="mt-8 space-y-4">
-                {[
-                  "We listen to what you’re trying to achieve.",
-                  "We help you explore relevant options.",
-                  "We make it easier to start a conversation.",
-                ].map((item) => (
-                  <p className="flex items-center gap-3 text-sm font-semibold text-ink/80" key={item}>
-                    <span className="grid h-6 w-6 place-items-center rounded-full bg-blue/10 text-blue">
-                      <Check size={14} strokeWidth={2.7} />
-                    </span>
-                    {item}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/5 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
+                  <p className="text-xl font-bold tracking-tight">Esama Isaiah</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-white/65">
+                    Founder, PlugworkNG
                   </p>
-                ))}
+                </div>
               </div>
-              <a
-                className="mt-9 inline-flex items-center gap-2 text-sm font-bold text-blue"
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Get to know us <ArrowRight size={16} />
-              </a>
+              <div>
+                <SectionLabel>The story behind the connection</SectionLabel>
+                <h2 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-[-0.05em] sm:text-5xl">
+                  Knowing who to trust is the <span className="text-blue">real difference.</span>
+                </h2>
+                <p className="mt-6 leading-7 text-ink/70">
+                  Finding someone who says they can do the job is easy. Knowing
+                  who to trust—and what you’re really paying for—is harder.
+                </p>
+                <p className="mt-4 leading-7 text-ink/70">
+                  For more than 15 years, PlugworkNG has connected people with
+                  opportunities, reliable suppliers, and service providers
+                  across construction, interiors, catering, logistics, printing,
+                  sourcing, and more.
+                </p>
+                <p className="mt-4 leading-7 text-ink/70">
+                  We don’t just connect. We help you ask the right questions and
+                  verify key details before you commit.
+                </p>
+                <p className="mt-6 text-sm font-bold text-ink">
+                  Trust. Connect. Prosper.
+                  <span className="ml-2 font-medium text-ink/50">— PlugworkNG</span>
+                </p>
+                <a
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-blue"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Talk with our team <ArrowRight size={16} />
+                </a>
+              </div>
+
+              <div className="flex flex-col justify-center gap-5">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl bg-white p-5 sm:p-6">
+                    <p className="text-3xl font-black tracking-tight text-blue sm:text-4xl">15+</p>
+                    <p className="mt-2 text-sm leading-5 text-ink/60">years connecting people to opportunities</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-5 sm:p-6">
+                    <p className="text-3xl font-black tracking-tight text-blue sm:text-4xl">50+</p>
+                    <p className="mt-2 text-sm leading-5 text-ink/60">providers in our service network</p>
+                  </div>
+                </div>
+                <blockquote className="rounded-2xl bg-ink p-6 text-white sm:p-8">
+                  <BadgeCheck size={25} className="mb-5 text-gold" />
+                  <p className="text-xl font-semibold leading-8 tracking-tight sm:text-2xl">
+                    “Anyone can say they have what you need. Knowing who to trust is the real problem.”
+                  </p>
+                  <footer className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-white/55">
+                    A note from the founder
+                  </footer>
+                </blockquote>
+              </div>
             </div>
           </div>
         </section>
@@ -482,9 +610,33 @@ function App() {
               <a className="transition hover:text-gold" href="tel:+2349049331071">0904 933 1071</a>
             </div>
           </div>
-          <div className="flex flex-col justify-between gap-3 pt-5 text-xs text-white/45 sm:flex-row">
-            <p>© {new Date().getFullYear()} PlugworkNG. All rights reserved.</p>
-            <p>Good people. Big possibilities.</p>
+          <div className="border-t border-white/12 pt-6">
+            <nav className="mx-auto max-w-xl" aria-label="Social media">
+              <p className="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">
+                Find us around the web
+              </p>
+              <ul className="grid grid-cols-5 gap-1 sm:gap-3">
+                {socialLinks.map(({ name, handle, href, icon: Icon, iconClass }) => (
+                  <li className="min-w-0" key={name}>
+                    <a
+                      className="social-link group"
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${name}: ${handle}`}
+                    >
+                      <span className={`social-icon ${iconClass}`}>
+                        <Icon size={20} />
+                      </span>
+                      <span className="social-handle">{name}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="mt-6 flex justify-center border-t border-white/10 pt-5 text-xs text-white/45">
+              <p>© {new Date().getFullYear()} PlugworkNG. All rights reserved.</p>
+            </div>
           </div>
         </div>
       </footer>
